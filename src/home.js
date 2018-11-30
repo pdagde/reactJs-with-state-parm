@@ -1,8 +1,6 @@
-import React ,{Component} from 'react';
+import React from 'react';
 
-class home extends Component{
-    render() {
-        const { homes } = this.props;
+    const home = ({homes}) => {
         const Homepage =homes.map(homeOne =>{
             return (
                 <div className="home" key={homeOne.id}>
@@ -18,5 +16,4 @@ class home extends Component{
             </div>
         );
     }
-}
 export default home
