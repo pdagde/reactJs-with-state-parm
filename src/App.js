@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomePage from './home'
+import AddHome from './addHome'
 class App extends Component {
   state = {
     home : [
@@ -15,6 +16,7 @@ class App extends Component {
        <h1>welcome to my react app</h1>
        <h1>knorex</h1>
        <HomePage homes={this.state.home} />
+       <AddHome/>
       </div>
     );
   }
