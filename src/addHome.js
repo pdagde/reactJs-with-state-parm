@@ -13,7 +13,8 @@ class AddHome extends Component {
     }
     handalSubmit = (e) =>{
         e.preventDefault();
-        console.log(this.state);
+        this.props.addHome(this.state);
+
     }
     render(){
         return (

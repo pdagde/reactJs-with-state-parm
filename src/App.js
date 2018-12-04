@@ -10,13 +10,38 @@ class App extends Component {
        {name:'D', age:24, belt:'pink', id:4}
      ]
   }
+
+  addHome = (newHome) => {
+    newHome.id = Math.random();
+    let newHomes = [...this.state.home, newHome];
+    this.setState({
+      home : newHomes
+    });
+
+  }
+  deleteHome = (e) =>{
+    const allHome = this.state.home.filter(home => {
+      return home.id !== e;
+    })
+    this.setState({
+      home: allHome
+    })
+  }
+  componentDidMount(){
+    console.log("component mounted");
+  }
+  componentDidUpdate(prevProps,prevState){
+    console.log("component update");
+    console.log(prevProps,prevState);
+  }
+
   render() {
     return (
       <div className="App">
        <h1>welcome to my react app</h1>
        <h1>knorex</h1>
-       <HomePage homes={this.state.home} />
-       <AddHome/>
+       <HomePage deleteHome={this.deleteHome} homes={this.state.home} />
+       <AddHome addHome ={this.addHome}/>
       </div>
     );
   }
